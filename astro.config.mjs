@@ -6,8 +6,8 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'PluginWizard Docs',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/PluginWizard/PluginWizard-Docs' }],
 			sidebar: [
 				{
 					label: 'Guides',
@@ -21,6 +21,9 @@ export default defineConfig({
 					items: [{ autogenerate: { directory: 'reference' } }],
 				},
 			],
+			customCss: [
+				"./src/styles/custom.css"
+			]
 		}),
 	],
 });
