@@ -61,7 +61,13 @@
 
 @media (min-width: 72rem) {
   .right-sidebar-container {
-    width: 20rem !important;
+    max-width: 20rem !important;
+  }
+  /* main-pane must fill remaining space since sidebar is now capped */
+  [data-has-sidebar][data-has-toc] .main-pane {
+    flex: 1 !important;
+    width: auto !important;
+    --sl-content-margin-inline: auto auto;
   }
   /* position: fixed escapes the container — anchor it to the right edge */
   .right-sidebar {
