@@ -7,6 +7,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'PluginWizard',
+			favicon: '/favicon.ico',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/PluginWizard/PluginWizard-Docs' },
 				{ icon: "discord", label: "Discord", href: "https://discord.gg/tJ67vmyW7f" },
