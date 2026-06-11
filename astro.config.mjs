@@ -29,6 +29,7 @@ export default defineConfig({
 			],
 			components: {
 				SiteTitle: "./src/components/overrides/SiteTitle.astro",
+				Footer: "./src/components/overrides/Footer.astro",
 			}
 		}),
 	],
