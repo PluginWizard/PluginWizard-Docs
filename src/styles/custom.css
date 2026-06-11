@@ -36,6 +36,10 @@
   width: auto;
 }
 
+.sl-markdown-content a:hover:not(:where(.not-content *)) {
+  color: var(--sl-color-text-accent);
+}
+
 /* use custom font first instead of system */
 .sl-badge {
   font-family: var(--__sl-font-mono);
