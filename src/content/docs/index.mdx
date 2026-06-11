@@ -8,27 +8,28 @@ hero:
 
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
 import { ContributorList } from "astro-contributors";
+import LinkCard from "/src/components/LinkCard.astro";
 
 ## Next steps
 
 <CardGrid>
-	<Card title="Getting started" icon="document">
+	<LinkCard title="Getting started" href="/guides/example" icon="document">
 		Everything you need to know to get started with PluginWizard.
-	</Card>
-	<Card title="Chat messages" icon="document">
+	</LinkCard>
+	<LinkCard title="Chat messages" href="#" icon="comment">
 		Sending chat messages with sprites, colors and other formatting options.
-	</Card>
-	<Card title="Commands" icon="add-document">
+	</LinkCard>
+	<LinkCard title="Commands" href="#" icon="add-document">
 		Create custom commands with command suggestions and permissions.
-	</Card>
-	<Card title="Events" icon="setting">
+	</LinkCard>
+	<LinkCard title="Events" href="#" icon="setting">
 		Registering event listeners for a variety of events, such as player join, block break and more.
-	</Card>
-	<Card title="World & Regions" icon="open-book">
+	</LinkCard>
+	<LinkCard title="World & Regions" href="#" icon="open-book">
 		Working with the world, including creating and managing regions.
-	</Card>
+	</LinkCard>
 </CardGrid>
 
 ## [Contribute](https://github.com/PluginWizard/PluginWizard-Docs)

@@ -1,0 +1,98 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+import type { ComponentProps } from "astro/types";
+
+interface Props {
+  title: string;
+  href: string;
+  icon?: ComponentProps<typeof Icon>["name"];
+}
+
+const { title, href, icon } = Astro.props;
+---
+
+<a href={href} class="not-content pw-link-card">
+  <article class="sl-flex">
+    <div class="title sl-flex">
+      {icon && <Icon name={icon} class="icon" size="1.333em" />}
+      <span set:html={title} />
+    </div>
+    <div class="body"><slot /></div>
+  </article>
+</a>
+
+<style>
+  .pw-link-card {
+    --pw-card-border: var(--sl-color-purple);
+    --pw-card-bg: var(--sl-color-purple-low);
+
+    border: 1px solid var(--sl-color-gray-5);
+    background-color: var(--sl-color-black);
+    border-radius: 0.2rem;
+    padding: clamp(1rem, calc(0.125rem + 2vw), 1.75rem);
+    text-decoration: none;
+    transition:
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .pw-link-card > article {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .pw-link-card:nth-child(4n + 1) {
+    --pw-card-border: var(--sl-color-orange);
+    --pw-card-bg: var(--sl-color-orange-low);
+  }
+
+  .pw-link-card:nth-child(4n + 3) {
+    --pw-card-border: var(--sl-color-green);
+    --pw-card-bg: var(--sl-color-green-low);
+  }
+
+  .pw-link-card:nth-child(4n + 4) {
+    --pw-card-border: var(--sl-color-red);
+    --pw-card-bg: var(--sl-color-red-low);
+  }
+
+  .pw-link-card:nth-child(4n + 5) {
+    --pw-card-border: var(--sl-color-blue);
+    --pw-card-bg: var(--sl-color-blue-low);
+  }
+
+  .title {
+    align-items: center;
+    gap: 0.9rem;
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-h4);
+    font-weight: 600;
+    line-height: var(--sl-line-height-headings);
+  }
+
+  .icon {
+    border: 1px solid var(--pw-card-border);
+    background-color: var(--pw-card-bg);
+    padding: 0.25em;
+    border-radius: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  .body {
+    color: var(--sl-color-gray-3);
+    font-size: clamp(var(--sl-text-sm), calc(0.5rem + 0.8vw), var(--sl-text-body));
+    line-height: 1.55;
+    transition: color 0.25s ease;
+  }
+
+  .pw-link-card:hover {
+    border-color: var(--pw-card-border);
+    background-color: var(--pw-card-bg);
+    box-shadow: 0 8px 22px rgb(0 0 0 / 0.2);
+  }
+
+  .pw-link-card:hover .body {
+    color: var(--sl-color-gray-1);
+  }
+</style>
