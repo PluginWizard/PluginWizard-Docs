@@ -6,8 +6,11 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'PluginWizard Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/PluginWizard/PluginWizard-Docs' }],
+			title: 'PluginWizard',
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/PluginWizard/PluginWizard-Docs' },
+				{ icon: "discord", label: "Discord", href: "https://discord.gg/tJ67vmyW7f" },
+			],
 			sidebar: [
 				{
 					label: 'Guides',
@@ -23,7 +26,10 @@ export default defineConfig({
 			],
 			customCss: [
 				"./src/styles/custom.css"
-			]
+			],
+			components: {
+				SiteTitle: "./src/components/overrides/SiteTitle.astro",
+			}
 		}),
 	],
 });
