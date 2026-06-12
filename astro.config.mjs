@@ -14,16 +14,34 @@ export default defineConfig({
 			],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Getting Started',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Getting Started', slug: 'getting-started' },
 					],
 				},
 				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
+					label: 'Messages',
+					items: [
+						{ label: 'Chat messages', slug: 'messages' },
+					],
 				},
+				{
+					label: 'Commands',
+					items: [
+						"commands",
+						"commands/command-arguments",
+						"commands/command-suggestions",
+						"commands/subcommands"
+					],
+				},
+				{
+					label: 'Worlds & Regions',
+					items: [
+						"worlds",
+						"worlds/regions"
+					],
+				}
+
 			],
 			customCss: [
 				"./src/styles/custom.css"
